@@ -1,0 +1,12 @@
+services:
+  backend:
+    build: .
+    env_file: .env
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - backend_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  backend_data:
